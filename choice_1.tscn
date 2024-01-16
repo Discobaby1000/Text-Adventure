@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=3 uid="uid://b52kuncd2kjgs"]
+
+[ext_resource type="Script" path="res://choice_1.gd" id="1_6pq1e"]
+
+[node name="Choice_1" type="Node2D"]
+script = ExtResource("1_6pq1e")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 177.0
+offset_top = 116.0
+offset_right = 954.0
+offset_bottom = 274.0
+theme_override_font_sizes/font_size = 100
+text = "What will you do"
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="char_timer" type="Timer" parent="Label"]
+wait_time = 0.05
+autostart = true
+
+[node name="A" type="Button" parent="."]
+offset_left = 125.0
+offset_top = 425.0
+offset_right = 460.0
+offset_bottom = 572.0
+theme_override_font_sizes/font_size = 30
+text = "Befrind the babies"
+
+[node name="B" type="Button" parent="."]
+offset_left = 698.0
+offset_top = 425.0
+offset_right = 1033.0
+offset_bottom = 572.0
+theme_override_font_sizes/font_size = 30
+text = "Attack the babies 
+with your fists"
+
+[connection signal="timeout" from="Label/char_timer" to="." method="_on_char_timer_timeout"]
+[connection signal="pressed" from="A" to="." method="_on_a_pressed"]
+[connection signal="pressed" from="B" to="." method="_on_b_pressed"]

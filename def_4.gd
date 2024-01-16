@@ -1,0 +1,13 @@
+extends Node2D
+
+func _on_char_timer_timeout():
+	$Label.visible_characters = $Label.visible_characters + 1
+
+func _on_a_pressed():
+	get_tree().change_scene_to_file("res://ending_2.tscn")
+
+func _on_b_pressed():
+	get_tree().change_scene_to_file("res://abuse.tscn")
+
+func _on_c_pressed():
+	get_tree().change_scene_to_file("res://sabotage.tscn")

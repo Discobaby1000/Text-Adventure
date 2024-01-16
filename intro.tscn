@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=3 uid="uid://crf24p3lt7xw8"]
+
+[ext_resource type="Script" path="res://intro.gd" id="1_mwn0i"]
+
+[node name="Intro" type="Node2D"]
+script = ExtResource("1_mwn0i")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -15.0
+offset_top = 166.0
+offset_right = 1161.0
+offset_bottom = 458.0
+theme_override_font_sizes/font_size = 100
+text = "You are Bill 
+Blunderbuss"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="line_timer" type="Timer" parent="Label"]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[node name="char_timer" type="Timer" parent="Label"]
+wait_time = 0.05
+autostart = true
+
+[node name="switch_timer" type="Timer" parent="Label"]
+wait_time = 6.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Label/line_timer" to="." method="_on_line_timer_timeout"]
+[connection signal="timeout" from="Label/line_timer" to="Label" method="_on_line_timer_timeout"]
+[connection signal="timeout" from="Label/char_timer" to="." method="_on_char_timer_timeout"]
+[connection signal="timeout" from="Label/char_timer" to="Label" method="_on_timer_timeout"]
+[connection signal="timeout" from="Label/switch_timer" to="." method="_on_switch_timer_timeout"]

@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=3 uid="uid://5aydxcj2h24y"]
+
+[ext_resource type="Script" path="res://atk_2.gd" id="1_3gluk"]
+
+[node name="Death_1" type="Node2D"]
+script = ExtResource("1_3gluk")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -89.0
+offset_top = 46.0
+offset_right = 1233.0
+offset_bottom = 323.0
+theme_override_font_sizes/font_size = 100
+text = "The babies slowly eat
+ you alive and you die"
+horizontal_alignment = 1
+vertical_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="char_timer" type="Timer" parent="Label"]
+wait_time = 0.05
+autostart = true
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 425.0
+offset_top = 425.0
+offset_right = 760.0
+offset_bottom = 572.0
+theme_override_font_sizes/font_size = 30
+text = "you lose
+Retry?"
+
+[connection signal="timeout" from="Label/char_timer" to="." method="_on_char_timer_timeout"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
